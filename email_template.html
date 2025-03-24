@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פאנל אור - תוכניות חינוכיות</title>
+    <style>
+        body {
+            font-family: Arial, 'Segoe UI', Tahoma, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f3e8ff;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f3e8ff;
+        }
+        .header-subtitle {
+            color: #9333ea;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .cta-top {
+            background-color: #d946ef;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .contact-options {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: white;
+            color: #c026d3;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 3px;
+            border: 2px solid #c026d3;
+        }
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 15px;
+        }
+        .program {
+            background-color: #ffffff;
+            border: 1px solid #f3e8ff;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .program-image {
+            width: 100px;
+            height: 140px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .program-content {
+            flex: 1;
+        }
+        .program-title {
+            color: #9333ea;
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .program-description {
+            font-size: 13px;
+            margin: 0;
+            line-height: 1.4;
+        }
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            gap: 8px;
+        }
+        .benefit-item:nth-child(1) {
+            background-color: #8b5cf6;
+        }
+        .benefit-item:nth-child(2) {
+            background-color: #ec4899;
+        }
+        .benefit-item:nth-child(3) {
+            background-color: #06b6d4;
+        }
+        .benefit-item:nth-child(4) {
+            background-color: #10b981;
+        }
+        .logo {
+            max-width: 150px;
+            margin: 0 auto 10px;
+            display: block;
+        }
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f8f9fa;
+            color: #666666;
+            font-size: 14px;
+        }
+        .legal-info {
+            font-size: 12px;
+            color: #888888;
+            text-align: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+        .legal-info a {
+            color: #9333ea;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo.png" alt="פאנל אור" class="logo">
+            <p class="header-subtitle">פיתוח חומרי למידה בסביבה מתוקשבת</p>
+        </div>
+
+        <div class="cta-top">
+            <h2 style="margin: 0 0 10px">🌟 מפגש חשיפה ללא התחייבות!</h2>
+            <p style="margin: 0">בואו להכיר את התוכניות שלנו ולגלות כיצד הן יכולות להשתלב בבית ספרכם</p>
+            <div class="contact-options">
+                <a href="tel:054-8059505" class="contact-button">📞 טלפון</a>
+                <a href="https://wa.me/972548059505" class="contact-button">📱 וואטסאפ</a>
+                <a href="mailto:info@panelor.co.il" class="contact-button">✉️ אימייל</a>
+            </div>
+        </div>
+
+        <div class="programs-grid">
+            <div class="program">
+                <img src="mamlachat_haotiyot.jpg" alt="ממלכת האותיות" class="program-image">
+                <div class="program-content">
+                    <div class="program-title">📚 ממלכת האותיות</div>
+                    <p class="program-description">תוכנית חווייתית לגני חובה המפתחת מודעות פונולוגית ומכינה לקריאה וכתיבה. כוללת משחקים, סיפורים ופעילויות אינטראקטיביות.</p>
+                </div>
+            </div>
+
+            <div class="program">
+                <img src="besod_haotiyot.jpg" alt="בסוד האותיות" class="program-image">
+                <div class="program-content">
+                    <div class="program-title">📖 בסוד האותיות</div>
+                    <p class="program-description">תוכנית מקיפה לכיתה א׳ להקניית הקריאה בשיטה הפונטית. משלבת למידה דיגיטלית, תרגול מובנה והתאמה אישית לקצב התלמיד.</p>
+                </div>
+            </div>
+
+            <div class="program">
+                <img src="besod_hakriaa.jpg" alt="בסוד הקריאה" class="program-image">
+                <div class="program-content">
+                    <div class="program-title">🎯 בסוד הקריאה</div>
+                    <p class="program-description">תוכנית העשרה לכיתה ב׳ לשיפור הבנת הנקרא, העשרת אוצר מילים ופיתוח הבעה בכתב. כולל טקסטים מותאמים ומשימות מאתגרות.</p>
+                </div>
+            </div>
+
+            <div class="program">
+                <img src="kelim_lehatzlaha.jpg" alt="כלים להצלחה" class="program-image">
+                <div class="program-content">
+                    <div class="program-title">✨ כלים להצלחה</div>
+                    <p class="program-description">תוכנית ייחודית המקנה כלי למידה וארגון לתלמידי היסודי. מפתחת מיומנויות חשיבה, ניהול זמן ולמידה עצמאית.</p>
+                </div>
+            </div>
+
+            <div class="program">
+                <img src="hovrot_hashraa.jpg" alt="חוברות העשרה" class="program-image">
+                <div class="program-content">
+                    <div class="program-title">📝 חוברות העשרה</div>
+                    <p class="program-description">חוברות מאתגרות לתלמידים מתקדמים. משלבות תרגילי חשיבה, משימות העשרה ופעילויות יצירתיות בתחומי השפה.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits">
+            <div class="benefit-item">
+                <span style="font-size: 20px">👨‍🏫</span>
+                ליווי מקצועי צמוד
+            </div>
+            <div class="benefit-item">
+                <span style="font-size: 20px">📚</span>
+                חומרי למידה מותאמים
+            </div>
+            <div class="benefit-item">
+                <span style="font-size: 20px">💻</span>
+                תמיכה טכנית ופדגוגית
+            </div>
+            <div class="benefit-item">
+                <span style="font-size: 20px">🔄</span>
+                עדכונים שוטפים
+            </div>
+        </div>
+
+        <div class="footer">
+            <img src="logo.png" alt="פאנל אור" class="logo" style="max-width: 100px;">
+            <p style="margin: 5px 0">צוות "פאנל אור"</p>
+            <p style="margin: 5px 0">📱 054-8059505 | ✉️ info@panelor.co.il</p>
+        </div>
+
+        <div class="legal-info">
+            <p style="margin: 5px 0">
+                <a href="{unsubscribe_link}">להסרה מרשימת התפוצה</a>
+            </p>
+            <p style="margin: 5px 0">© 2024 פאנל אור</p>
+        </div>
+    </div>
+</body>
+</html> 
