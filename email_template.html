@@ -5,93 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>פאנל אור - תוכניות חינוכיות</title>
     <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: Arial, 'Segoe UI', Tahoma, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             margin: 0;
             padding: 0;
             background-color: #f3e8ff;
+            -webkit-text-size-adjust: 100%;
         }
+        
+        /* Mobile-First Container */
         .container {
-            max-width: 600px;
-            margin: 20px auto;
+            max-width: 100%;
+            margin: 0 auto;
             background-color: #ffffff;
-            border-radius: 8px;
         }
+        
+        /* Header Styles */
         .header {
             text-align: center;
-            padding: 20px;
-            background-color: #f3e8ff;
+            padding: 20px 15px;
+            background-color: #2b2b2b;
         }
+        
+        .logo {
+            max-width: 200px;
+            margin: 0 auto 10px;
+            display: block;
+        }
+        
         .header-subtitle {
-            color: #9333ea;
+            color: #ffffff;
             font-size: 16px;
             margin: 5px 0;
+            padding: 0 15px;
         }
+        
+        /* CTA Section */
         .cta-top {
             background-color: #d946ef;
-            padding: 20px;
+            padding: 20px 15px;
             text-align: center;
             color: white;
         }
+        
         .contact-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
             margin-top: 15px;
-            text-align: center;
+            padding: 0 15px;
         }
+        
         .contact-button {
+            flex: 1;
+            min-width: 140px;
+            max-width: 200px;
             display: inline-block;
-            padding: 8px 16px;
+            padding: 12px;
             background-color: white;
             color: #c026d3;
             text-decoration: none;
-            border-radius: 20px;
+            border-radius: 25px;
             font-weight: bold;
-            margin: 3px;
+            text-align: center;
             border: 2px solid #c026d3;
         }
+        
+        /* Programs Grid - Mobile First */
         .programs-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 15px;
             padding: 15px;
         }
+        
+        @media (min-width: 600px) {
+            .programs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         .program {
             background-color: #ffffff;
             border: 1px solid #f3e8ff;
             border-radius: 8px;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 15px;
             text-align: center;
         }
+        
         .program-image {
             width: 100px;
             height: 140px;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin: 0 auto 10px;
+            display: block;
         }
-        .program-content {
-            flex: 1;
-        }
+        
         .program-title {
             color: #9333ea;
             font-size: 16px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
         }
+        
         .program-description {
-            font-size: 13px;
+            font-size: 14px;
             margin: 0;
             line-height: 1.4;
+            color: #4b4b4b;
         }
+        
+        /* Benefits Section */
         .benefits {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 10px;
             padding: 15px;
-            margin-top: 20px;
+            margin-top: 10px;
         }
+        
+        @media (min-width: 480px) {
+            .benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         .benefit-item {
             display: flex;
             align-items: center;
@@ -104,40 +151,46 @@
             color: white;
             gap: 8px;
         }
-        .benefit-item:nth-child(1) {
-            background-color: #8b5cf6;
-        }
-        .benefit-item:nth-child(2) {
-            background-color: #ec4899;
-        }
-        .benefit-item:nth-child(3) {
-            background-color: #06b6d4;
-        }
-        .benefit-item:nth-child(4) {
-            background-color: #10b981;
-        }
-        .logo {
-            max-width: 150px;
-            margin: 0 auto 10px;
-            display: block;
-        }
+        
+        .benefit-item:nth-child(1) { background-color: #8b5cf6; }
+        .benefit-item:nth-child(2) { background-color: #ec4899; }
+        .benefit-item:nth-child(3) { background-color: #06b6d4; }
+        .benefit-item:nth-child(4) { background-color: #10b981; }
+        
+        /* Footer */
         .footer {
             text-align: center;
-            padding: 15px;
-            background-color: #f8f9fa;
-            color: #666666;
+            padding: 20px 15px;
+            background-color: #2b2b2b;
+            color: #ffffff;
+        }
+        
+        .footer .logo {
+            max-width: 100px;
+            margin: 0 auto 10px;
+        }
+        
+        .footer p {
+            margin: 5px 0;
             font-size: 14px;
         }
+        
+        /* Legal Info */
         .legal-info {
             font-size: 12px;
             color: #888888;
             text-align: center;
-            padding: 10px;
+            padding: 10px 15px;
             background-color: #f8f9fa;
         }
+        
         .legal-info a {
             color: #9333ea;
             text-decoration: none;
+        }
+        
+        .legal-info p {
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -149,8 +202,8 @@
         </div>
 
         <div class="cta-top">
-            <h2 style="margin: 0 0 10px">🌟 מפגש חשיפה ללא התחייבות!</h2>
-            <p style="margin: 0">בואו להכיר את התוכניות שלנו ולגלות כיצד הן יכולות להשתלב בבית ספרכם</p>
+            <h2 style="margin: 0 0 10px; font-size: 20px">🌟 מפגש חשיפה ללא התחייבות!</h2>
+            <p style="margin: 0; font-size: 16px">בואו להכיר את התוכניות שלנו ולגלות כיצד הן יכולות להשתלב בבית ספרכם</p>
             <div class="contact-options">
                 <a href="tel:054-8059505" class="contact-button">📞 טלפון</a>
                 <a href="https://wa.me/972548059505" class="contact-button">📱 וואטסאפ</a>
@@ -163,7 +216,7 @@
                 <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/mamlachat_haotiyot.jpg" alt="ממלכת האותיות" class="program-image">
                 <div class="program-content">
                     <div class="program-title">📚 ממלכת האותיות</div>
-                    <p class="program-description">תוכנית חווייתית לגני חובה המפתחת מודעות פונולוגית ומכינה לקריאה וכתיבה. כוללת משחקים, סיפורים ופעילויות אינטראקטיביות.</p>
+                    <p class="program-description">תוכנית חווייתית לגני חובה המפתחת מודעות פונולוגית ומכינה לקריאה וכתיבה</p>
                 </div>
             </div>
 
@@ -171,7 +224,7 @@
                 <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/besod_haotiyot.jpg" alt="בסוד האותיות" class="program-image">
                 <div class="program-content">
                     <div class="program-title">📖 בסוד האותיות</div>
-                    <p class="program-description">תוכנית מקיפה לכיתה א׳ להקניית הקריאה בשיטה הפונטית. משלבת למידה דיגיטלית, תרגול מובנה והתאמה אישית לקצב התלמיד.</p>
+                    <p class="program-description">תוכנית מקיפה לכיתה א׳ להקניית הקריאה בשיטה הפונטית</p>
                 </div>
             </div>
 
@@ -179,7 +232,7 @@
                 <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/besod_hakriaa.jpg" alt="בסוד הקריאה" class="program-image">
                 <div class="program-content">
                     <div class="program-title">🎯 בסוד הקריאה</div>
-                    <p class="program-description">תוכנית העשרה לכיתה ב׳ לשיפור הבנת הנקרא, העשרת אוצר מילים ופיתוח הבעה בכתב. כולל טקסטים מותאמים ומשימות מאתגרות.</p>
+                    <p class="program-description">תוכנית העשרה לכיתה ב׳ לשיפור הבנת הנקרא והעשרת אוצר מילים</p>
                 </div>
             </div>
 
@@ -187,7 +240,7 @@
                 <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/kelim_lehatzlaha.jpg" alt="כלים להצלחה" class="program-image">
                 <div class="program-content">
                     <div class="program-title">✨ כלים להצלחה</div>
-                    <p class="program-description">תוכנית ייחודית המקנה כלי למידה וארגון לתלמידי היסודי. מפתחת מיומנויות חשיבה, ניהול זמן ולמידה עצמאית.</p>
+                    <p class="program-description">תוכנית ייחודית המקנה כלי למידה וארגון לתלמידי היסודי</p>
                 </div>
             </div>
 
@@ -195,7 +248,7 @@
                 <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/hovrot_hashraa.jpg" alt="חוברות העשרה" class="program-image">
                 <div class="program-content">
                     <div class="program-title">📝 חוברות העשרה</div>
-                    <p class="program-description">חוברות מאתגרות לתלמידים מתקדמים. משלבות תרגילי חשיבה, משימות העשרה ופעילויות יצירתיות בתחומי השפה.</p>
+                    <p class="program-description">חוברות מאתגרות לתלמידים מתקדמים עם משימות העשרה ופעילויות יצירתיות</p>
                 </div>
             </div>
         </div>
@@ -220,16 +273,16 @@
         </div>
 
         <div class="footer">
-            <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/logo.png" alt="פאנל אור" class="logo" style="max-width: 100px;">
-            <p style="margin: 5px 0">צוות "פאנל אור"</p>
-            <p style="margin: 5px 0">📱 054-8059505 | ✉️ info@panelor.co.il</p>
+            <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/logo.png" alt="פאנל אור" class="logo">
+            <p>צוות "פאנל אור"</p>
+            <p>📱 054-8059505 | ✉️ info@panelor.co.il</p>
         </div>
 
         <div class="legal-info">
-            <p style="margin: 5px 0">
+            <p>
                 <a href="{unsubscribe_link}">להסרה מרשימת התפוצה</a>
             </p>
-            <p style="margin: 5px 0">© 2024 פאנל אור</p>
+            <p>© 2024 פאנל אור</p>
         </div>
     </div>
 </body>
