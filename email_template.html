@@ -32,7 +32,7 @@
         .header {
             text-align: center;
             padding: 20px 15px;
-            background-color: #2b2b2b;
+            background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%);
         }
         
         .logo {
@@ -42,10 +42,11 @@
         }
         
         .header-subtitle {
-            color: #ffffff;
+            color: #4a044e;
             font-size: 16px;
             margin: 5px 0;
             padding: 0 15px;
+            font-weight: bold;
         }
         
         /* CTA Section */
@@ -84,8 +85,11 @@
         .programs-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
-            padding: 15px;
+            gap: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 100%);
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         @media (min-width: 600px) {
@@ -96,32 +100,96 @@
         
         .program {
             background-color: #ffffff;
-            border: 1px solid #f3e8ff;
-            border-radius: 8px;
-            padding: 15px;
+            border: 2px solid #e9d5ff;
+            border-radius: 15px;
+            padding: 20px;
             text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .program::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #d946ef);
+            border-radius: 15px 15px 0 0;
         }
         
         .program-image {
-            width: 100px;
-            height: 140px;
-            border-radius: 8px;
-            margin: 0 auto 10px;
+            width: 120px;
+            height: 160px;
+            border-radius: 10px;
+            margin: 0 auto 15px;
             display: block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         
         .program-title {
-            color: #9333ea;
-            font-size: 16px;
-            margin-bottom: 8px;
+            color: #7c3aed;
+            font-size: 18px;
+            margin-bottom: 12px;
             font-weight: bold;
         }
         
         .program-description {
-            font-size: 14px;
-            margin: 0;
-            line-height: 1.4;
+            font-size: 15px;
+            margin: 0 0 15px;
+            line-height: 1.5;
             color: #4b4b4b;
+        }
+        
+        .program-features {
+            text-align: right;
+            margin: 15px 0;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .feature-item {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .feature-icon {
+            color: #8b5cf6;
+            font-size: 16px;
+        }
+        
+        .program-cta {
+            display: inline-block;
+            background: linear-gradient(90deg, #8b5cf6, #d946ef);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: transform 0.2s ease;
+        }
+        
+        .program-cta:hover {
+            transform: translateY(-2px);
+        }
+        
+        .highlight-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            color: #4a5568;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transform: none;
         }
         
         /* Benefits Section */
@@ -202,79 +270,89 @@
         </div>
 
         <div class="cta-top">
-            <h2 style="margin: 0 0 10px; font-size: 20px">🌟 מפגש חשיפה ללא התחייבות!</h2>
-            <p style="margin: 0; font-size: 16px">בואו להכיר את התוכניות שלנו ולגלות כיצד הן יכולות להשתלב בבית ספרכם</p>
+            <h2 style="margin: 0 0 15px; font-size: 24px">חומרי למידה חדשניים לרכישת הקריאה</h2>
+            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">
+                אנו מזמינים אתכם להכיר את סדרת הספרים המובילה שלנו להוראת הקריאה. התוכניות שלנו, "בסוד האותיות" ו"בסוד הקריאה", פותחו על ידי צוות מומחים בתחום החינוך והאוריינות, ומציעות דרך מובנית ויעילה לרכישת הקריאה. בואו לגלות כיצד הגישה הייחודית שלנו, המשלבת למידה דיגיטלית עם חומרים מודפסים, מובילה להצלחה. למידע נוסף, בקרו באתר <a href="https://www.panelor.co.il" style="color: white; text-decoration: underline;">www.panelor.co.il</a>
+            </p>
             <div class="contact-options">
-                <a href="tel:054-8059505" class="contact-button">📞 טלפון</a>
-                <a href="https://wa.me/972548059505" class="contact-button">📱 וואטסאפ</a>
-                <a href="mailto:info@panelor.co.il" class="contact-button">✉️ אימייל</a>
+                <a href="tel:054-8059505" class="contact-button">📞 שיחת ייעוץ חינם</a>
+                <a href="https://wa.me/972548059505" class="contact-button">📱 צ'אט מהיר בוואטסאפ</a>
+                <a href="mailto:info@panelor.co.il" class="contact-button">✉️ תיאום פגישת היכרות</a>
             </div>
         </div>
 
         <div class="programs-grid">
             <div class="program">
-                <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/mamlachat_haotiyot.jpg" alt="ממלכת האותיות" class="program-image">
-                <div class="program-content">
-                    <div class="program-title">📚 ממלכת האותיות</div>
-                    <p class="program-description">תוכנית חווייתית לגני חובה המפתחת מודעות פונולוגית ומכינה לקריאה וכתיבה</p>
-                </div>
-            </div>
-
-            <div class="program">
+                <div class="highlight-badge">להצלחה בכיתה א'</div>
                 <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/besod_haotiyot.jpg" alt="בסוד האותיות" class="program-image">
                 <div class="program-content">
-                    <div class="program-title">📖 בסוד האותיות</div>
-                    <p class="program-description">תוכנית מקיפה לכיתה א׳ להקניית הקריאה בשיטה הפונטית</p>
+                    <div class="program-title">🌟 בסוד האותיות</div>
+                    <p class="program-description">תוכנית מובילה להקניית הקריאה בשיטה הפונטית, בהתאמה מלאה לתוכנית משרד החינוך</p>
+                    <div class="program-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            למידה מותאמת אישית
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            חומרי המחשה דיגיטליים
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            מעקב והתקדמות שוטפת
+                        </div>
+                    </div>
+                    <a href="tel:054-8059505" class="program-cta">לתיאום הדגמה ➜</a>
                 </div>
             </div>
 
             <div class="program">
+                <div class="highlight-badge">מומלץ לכיתה ב'</div>
                 <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/besod_hakriaa.jpg" alt="בסוד הקריאה" class="program-image">
                 <div class="program-content">
-                    <div class="program-title">🎯 בסוד הקריאה</div>
-                    <p class="program-description">תוכנית העשרה לכיתה ב׳ לשיפור הבנת הנקרא והעשרת אוצר מילים</p>
-                </div>
-            </div>
-
-            <div class="program">
-                <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/kelim_lehatzlaha.jpg" alt="כלים להצלחה" class="program-image">
-                <div class="program-content">
-                    <div class="program-title">✨ כלים להצלחה</div>
-                    <p class="program-description">תוכנית ייחודית המקנה כלי למידה וארגון לתלמידי היסודי</p>
-                </div>
-            </div>
-
-            <div class="program">
-                <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/hovrot_hashraa.jpg" alt="חוברות העשרה" class="program-image">
-                <div class="program-content">
-                    <div class="program-title">📝 חוברות העשרה</div>
-                    <p class="program-description">חוברות מאתגרות לתלמידים מתקדמים עם משימות העשרה ופעילויות יצירתיות</p>
+                    <div class="program-title">📚 בסוד הקריאה</div>
+                    <p class="program-description">תוכנית מתקדמת לשיפור הבנת הנקרא והעשרת אוצר המילים, המותאמת לתלמידי כיתה ב'</p>
+                    <div class="program-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            טקסטים מותאמים לרמה
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            פיתוח הבנת הנקרא
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            העשרת אוצר מילים
+                        </div>
+                    </div>
+                    <a href="tel:054-8059505" class="program-cta">לפרטים והרשמה ➜</a>
                 </div>
             </div>
         </div>
 
         <div class="benefits">
             <div class="benefit-item">
-                <span style="font-size: 20px">👨‍🏫</span>
-                ליווי מקצועי צמוד
+                <span style="font-size: 24px">👨‍🏫</span>
+                צוות מקצועי ומנוסה
             </div>
             <div class="benefit-item">
-                <span style="font-size: 20px">📚</span>
-                חומרי למידה מותאמים
+                <span style="font-size: 24px">⭐</span>
+                תוצאות מוכחות בשטח
             </div>
             <div class="benefit-item">
-                <span style="font-size: 20px">💻</span>
-                תמיכה טכנית ופדגוגית
+                <span style="font-size: 24px">💫</span>
+                חוויית למידה מהנה
             </div>
             <div class="benefit-item">
-                <span style="font-size: 20px">🔄</span>
-                עדכונים שוטפים
+                <span style="font-size: 24px">🎯</span>
+                התקדמות מובטחת
             </div>
         </div>
 
         <div class="footer">
             <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/logo.png" alt="פאנל אור" class="logo">
-            <p>צוות "פאנל אור"</p>
+            <p>הצטרפו למהפכת הלמידה של פאנל אור</p>
             <p>📱 054-8059505 | ✉️ info@panelor.co.il</p>
         </div>
 
