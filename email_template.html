@@ -1,367 +1,287 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="he">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl" lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <meta name="supported-color-schemes" content="light only">
+    <meta name="format-detection" content="telephone=no">
     <title>פאנל אור - תוכניות חינוכיות</title>
     <style>
-        /* Reset Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        [data-ogsc] .dark-mode-reset {
+            background-color: #ffffff !important;
+            background: #ffffff !important;
         }
-        
-        body {
-            font-family: Arial, 'Segoe UI', Tahoma, sans-serif;
-            line-height: 1.4;
-            margin: 0;
-            padding: 0;
-            background-color: #f3e8ff;
-            -webkit-text-size-adjust: 100%;
+        .feature-list {
+            color: #000000;
+            margin: 8px 0;
+            font-size: 15px;
+            line-height: 1.6;
         }
-        
-        /* Mobile-First Container */
-        .container {
-            max-width: 100%;
-            margin: 0 auto;
-            background-color: #ffffff;
-        }
-        
-        /* Header Styles */
-        .header {
-            text-align: center;
-            padding: 20px 15px;
-            background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%);
-        }
-        
-        .logo {
-            max-width: 200px;
-            margin: 0 auto 10px;
-            display: block;
-        }
-        
-        .header-subtitle {
-            color: #4a044e;
-            font-size: 16px;
-            margin: 5px 0;
-            padding: 0 15px;
+        .feature-list::before {
+            content: "✓";
+            margin-left: 8px;
+            color: #9333ea;
             font-weight: bold;
         }
-        
-        /* CTA Section */
-        .cta-top {
-            background-color: #d946ef;
-            padding: 20px 15px;
-            text-align: center;
-            color: white;
-        }
-        
-        .contact-options {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-            padding: 0 15px;
-        }
-        
-        .contact-button {
-            flex: 1;
-            min-width: 140px;
-            max-width: 200px;
-            display: inline-block;
-            padding: 12px;
-            background-color: white;
-            color: #c026d3;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            text-align: center;
-            border: 2px solid #c026d3;
-        }
-        
-        /* Programs Grid - Mobile First */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            padding: 20px;
-            background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 100%);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        @media (min-width: 600px) {
+        @media screen and (min-width: 600px) {
             .programs-grid {
-                grid-template-columns: repeat(2, 1fr);
+                display: flex;
+                gap: 20px;
+            }
+            .program-item {
+                flex: 1;
+            }
+            .contact-buttons {
+                display: flex;
+                gap: 10px;
+            }
+            .contact-button {
+                flex: 1;
             }
         }
-        
-        .program {
-            background-color: #ffffff;
-            border: 2px solid #e9d5ff;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
+        .video-container {
             position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
             overflow: hidden;
+            margin: 15px 0;
+            border-radius: 10px;
         }
-        
-        .program::before {
-            content: '';
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #8b5cf6, #d946ef);
-            border-radius: 15px 15px 0 0;
-        }
-        
-        .program-image {
-            width: 120px;
-            height: 160px;
+            width: 100%;
+            height: 100%;
             border-radius: 10px;
-            margin: 0 auto 15px;
-            display: block;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        
-        .program-title {
-            color: #7c3aed;
-            font-size: 18px;
-            margin-bottom: 12px;
-            font-weight: bold;
-        }
-        
-        .program-description {
-            font-size: 15px;
-            margin: 0 0 15px;
-            line-height: 1.5;
-            color: #4b4b4b;
-        }
-        
-        .program-features {
-            text-align: right;
-            margin: 15px 0;
-            font-size: 14px;
-            color: #6b7280;
-        }
-        
-        .feature-item {
-            margin: 8px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .feature-icon {
-            color: #8b5cf6;
-            font-size: 16px;
-        }
-        
-        .program-cta {
-            display: inline-block;
-            background: linear-gradient(90deg, #8b5cf6, #d946ef);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-            transition: transform 0.2s ease;
-        }
-        
-        .program-cta:hover {
-            transform: translateY(-2px);
-        }
-        
-        .highlight-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
-            color: #4a5568;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            transform: none;
-        }
-        
-        /* Benefits Section */
-        .benefits {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            padding: 15px;
-            margin-top: 10px;
-        }
-        
-        @media (min-width: 480px) {
-            .benefits {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-            color: white;
-            gap: 8px;
-        }
-        
-        .benefit-item:nth-child(1) { background-color: #8b5cf6; }
-        .benefit-item:nth-child(2) { background-color: #ec4899; }
-        .benefit-item:nth-child(3) { background-color: #06b6d4; }
-        .benefit-item:nth-child(4) { background-color: #10b981; }
-        
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 20px 15px;
-            background-color: #2b2b2b;
-            color: #ffffff;
-        }
-        
-        .footer .logo {
-            max-width: 100px;
-            margin: 0 auto 10px;
-        }
-        
-        .footer p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-        
-        /* Legal Info */
-        .legal-info {
-            font-size: 12px;
-            color: #888888;
-            text-align: center;
-            padding: 10px 15px;
-            background-color: #f8f9fa;
-        }
-        
-        .legal-info a {
-            color: #9333ea;
-            text-decoration: none;
-        }
-        
-        .legal-info p {
-            margin: 5px 0;
+            border: none;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/logo.png" alt="פאנל אור" class="logo">
-            <p class="header-subtitle">פיתוח חומרי למידה בסביבה מתוקשבת</p>
-        </div>
+<body class="dark-mode-reset" style="margin: 0; padding: 0; background: #ffffff !important; background-color: #ffffff !important; direction: rtl; font-family: Arial, Helvetica, sans-serif; color-scheme: light only;">
+    <!-- Main Wrapper Table with Fixed Background -->
+    <table role="presentation" class="dark-mode-reset" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff" style="background: #ffffff !important; background-color: #ffffff !important; min-width: 100%; width: 100%;">
+        <tr>
+            <td align="center" class="dark-mode-reset" style="background: #ffffff !important; background-color: #ffffff !important;">
+                <!-- Content Table -->
+                <table role="presentation" class="dark-mode-reset" cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#ffffff" style="background: #ffffff !important; background-color: #ffffff !important; width: 100%; max-width: 600px;">
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" class="dark-mode-reset" bgcolor="#ffffff" style="background: #ffffff !important; background-color: #ffffff !important; padding: 20px 0; border-bottom: 2px solid #9333ea;">
+                            <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/images/logo.png" alt="פאנל אור" width="200" style="display: block; margin: 0 auto;">
+                            <p style="margin: 10px 0 0 0; color: #000000; text-align: center;">פיתוח חומרי למידה בסביבה מתוקשבת</p>
+                        </td>
+                    </tr>
 
-        <div class="cta-top">
-            <h2 style="margin: 0 0 15px; font-size: 24px">חומרי למידה חדשניים לרכישת הקריאה</h2>
-            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">
-                אנו מזמינים אתכם להכיר את סדרת הספרים המובילה שלנו להוראת הקריאה. התוכניות שלנו, "בסוד האותיות" ו"בסוד הקריאה", פותחו על ידי צוות מומחים בתחום החינוך והאוריינות, ומציעות דרך מובנית ויעילה לרכישת הקריאה. בואו לגלות כיצד הגישה הייחודית שלנו, המשלבת למידה דיגיטלית עם חומרים מודפסים, מובילה להצלחה. למידע נוסף, בקרו באתר <a href="https://www.panelor.co.il" style="color: white; text-decoration: underline;">www.panelor.co.il</a>
-            </p>
-            <div class="contact-options">
-                <a href="tel:054-8059505" class="contact-button">📞 שיחת ייעוץ חינם</a>
-                <a href="https://wa.me/972548059505" class="contact-button">📱 צ'אט מהיר בוואטסאפ</a>
-                <a href="mailto:info@panelor.co.il" class="contact-button">✉️ תיאום פגישת היכרות</a>
-            </div>
-        </div>
+                    <!-- CTA Top Section -->
+                    <tr>
+                        <td bgcolor="#9333ea" style="padding: 30px 20px; text-align: right;">
+                            <h2 style="color: #ffffff; margin: 0 0 15px 0; font-size: 24px;">חומרי למידה חדשניים לרכישת הקריאה</h2>
+                            <p style="color: #ffffff; margin: 0 0 20px 0; font-size: 16px; line-height: 1.6;">
+                                אנו מזמינים אתכם להכיר את סדרת הספרים המובילה שלנו להוראת הקריאה. התוכניות שלנו, "בסוד האותיות" ו"בסוד הקריאה", פותחו על ידי צוות מומחים בתחום החינוך והאוריינות, ומציעות דרך מובנית ויעילה לרכישת הקריאה. בואו לגלות כיצד הגישה הייחודית שלנו, המשלבת למידה דיגיטלית עם חומרים מודפסים, מובילה להצלחה.
+                            </p>
+                            <div class="contact-buttons">
+                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="contact-button" style="margin-bottom: 10px;">
+                                    <tr>
+                                        <td bgcolor="#ffffff" style="padding: 12px 30px; border-radius: 25px; text-align: center;">
+                                            <a href="https://wa.me/972548059505" style="color: #9333ea; text-decoration: none; font-weight: bold; display: block;">📞 שיחת ייעוץ</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="contact-button" style="margin-bottom: 10px;">
+                                    <tr>
+                                        <td bgcolor="#ffffff" style="padding: 12px 30px; border-radius: 25px; text-align: center;">
+                                            <a href="https://wa.me/972548059505" style="color: #9333ea; text-decoration: none; font-weight: bold; display: block;">📱 צ'אט בוואטסאפ</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="contact-button">
+                                    <tr>
+                                        <td bgcolor="#ffffff" style="padding: 12px 30px; border-radius: 25px; text-align: center;">
+                                            <a href="mailto:info@panelor.co.il" style="color: #9333ea; text-decoration: none; font-weight: bold; display: block;">✉️ תיאום פגישה</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
 
-        <div class="programs-grid">
-            <div class="program">
-                <div class="highlight-badge">להצלחה בכיתה א'</div>
-                <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/besod_haotiyot.jpg" alt="בסוד האותיות" class="program-image">
-                <div class="program-content">
-                    <div class="program-title">🌟 בסוד האותיות</div>
-                    <p class="program-description">תוכנית מובילה להקניית הקריאה בשיטה הפונטית, בהתאמה מלאה לתוכנית משרד החינוך</p>
-                    <div class="program-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            למידה מותאמת אישית
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            חומרי המחשה דיגיטליים
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            מעקב והתקדמות שוטפת
-                        </div>
-                    </div>
-                    <a href="tel:054-8059505" class="program-cta">לתיאום הדגמה ➜</a>
-                </div>
-            </div>
+                    <!-- Programs -->
+                    <tr>
+                        <td class="dark-mode-reset" bgcolor="#ffffff" style="background: #ffffff !important; background-color: #ffffff !important; padding: 20px;">
+                            <div class="programs-grid">
+                                <!-- Program 1 -->
+                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="program-item" style="margin-bottom: 20px;">
+                                    <tr>
+                                        <td class="dark-mode-reset" bgcolor="#ffffff" style="background: #ffffff !important; background-color: #ffffff !important; padding: 20px; border: 2px solid #9333ea; border-radius: 15px;">
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td style="text-align: right;">
+                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffd700" style="border-radius: 20px; display: inline-block;">
+                                                            <tr>
+                                                                <td style="padding: 8px 15px;">
+                                                                    <span style="color: #000000; font-weight: bold; font-size: 14px;">להצלחה בכיתה א'</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="padding: 20px 0;">
+                                                        <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/images/besod_haotiyot.jpg" alt="בסוד האותיות" width="200" style="display: block; max-width: 100%; height: auto; border-radius: 10px;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 15px 0;">
+                                                            <tr>
+                                                                <td bgcolor="#ffd700" style="background: #ffd700 !important; background-color: #ffd700 !important; padding: 12px; border-radius: 25px; text-align: center;">
+                                                                    <a href="https://www.youtube.com/watch?v=qNXuCeFToQc" target="_blank" style="color: #000000; text-decoration: none; font-weight: bold; display: block; font-size: 16px;">▶️ צפו בסרטון - בסוד האותיות</a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: right;">
+                                                        <h3 style="color: #9333ea; margin: 0 0 12px 0; font-size: 20px;">📚 בסוד האותיות</h3>
+                                                        <p style="color: #000000; margin: 0 0 15px 0; font-size: 16px; line-height: 1.6;">תוכנית מובילה להקניית הקריאה בשיטה הפונטית, באישור משרד החינוך.</p>
+                                                        <p class="feature-list">דגש רב באופנויות השפה, קריאה-כתיבה-האזנה-דיבור</p>
+                                                        <p class="feature-list">למידה מותאמת אישית</p>
+                                                        <p class="feature-list">חומרי המחשה מעשיים ודיגיטליים</p>
+                                                        <p class="feature-list">מעקב והתקדמות שוטפת</p>
+                                                        <p class="feature-list">מרכז למידה עשיר</p>
+                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: 20px;">
+                                                            <tr>
+                                                                <td bgcolor="#e9d5ff" style="background: #e9d5ff !important; background-color: #e9d5ff !important; padding: 14px; border-radius: 25px; text-align: center;">
+                                                                    <a href="https://wa.me/972548059505" style="color: #000000; text-decoration: none; font-weight: bold; display: block; font-size: 16px;">➜ תיאום מפגש חשיפה</a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
 
-            <div class="program">
-                <div class="highlight-badge">מומלץ לכיתה ב'</div>
-                <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/besod_hakriaa.jpg" alt="בסוד הקריאה" class="program-image">
-                <div class="program-content">
-                    <div class="program-title">📚 בסוד הקריאה</div>
-                    <p class="program-description">תוכנית מתקדמת לשיפור הבנת הנקרא והעשרת אוצר המילים, המותאמת לתלמידי כיתה ב'</p>
-                    <div class="program-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            טקסטים מותאמים לרמה
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            פיתוח הבנת הנקרא
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            העשרת אוצר מילים
-                        </div>
-                    </div>
-                    <a href="tel:054-8059505" class="program-cta">לפרטים והרשמה ➜</a>
-                </div>
-            </div>
-        </div>
+                                <!-- Program 2 -->
+                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="program-item">
+                                    <tr>
+                                        <td class="dark-mode-reset" bgcolor="#ffffff" style="background: #ffffff !important; background-color: #ffffff !important; padding: 20px; border: 2px solid #9333ea; border-radius: 15px;">
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td style="text-align: right;">
+                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffd700" style="border-radius: 20px; display: inline-block;">
+                                                            <tr>
+                                                                <td style="padding: 8px 15px;">
+                                                                    <span style="color: #000000; font-weight: bold; font-size: 14px;">מומלץ לכיתה ב'</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="padding: 20px 0;">
+                                                        <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/images/besod_hakriaa.jpg" alt="בסוד הקריאה" width="200" style="display: block; max-width: 100%; height: auto; border-radius: 10px;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 15px 0;">
+                                                            <tr>
+                                                                <td bgcolor="#ffd700" style="background: #ffd700 !important; background-color: #ffd700 !important; padding: 12px; border-radius: 25px; text-align: center;">
+                                                                    <a href="https://www.youtube.com/watch?v=8KGhhCYYSbw" target="_blank" style="color: #000000; text-decoration: none; font-weight: bold; display: block; font-size: 16px;">▶️ צפו בסרטון - בסוד הקריאה</a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: right;">
+                                                        <h3 style="color: #9333ea; margin: 0 0 12px 0; font-size: 20px;">📚 בסוד הקריאה</h3>
+                                                        <p style="color: #000000; margin: 0 0 15px 0; font-size: 16px; line-height: 1.6;">טיפוח מיומנויות בשפה העברית, לכיתה ב. באישור משרד החינוך.</p>
+                                                        <p class="feature-list">טקסטים ממגוון עולמות השיח</p>
+                                                        <p class="feature-list">פיתוח הבנת נקרא</p>
+                                                        <p class="feature-list">העשרת אוצר מילים</p>
+                                                        <p class="feature-list">רמות חשיבה שונות</p>
+                                                        <p class="feature-list">כתיבה תקשורתית לסוגיה</p>
+                                                        <p class="feature-list">משימות יצירתיות</p>
+                                                        <p class="feature-list">הכנת התלמיד ללמידה עצמאית</p>
+                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: 20px;">
+                                                            <tr>
+                                                                <td bgcolor="#e9d5ff" style="background: #e9d5ff !important; background-color: #e9d5ff !important; padding: 14px; border-radius: 25px; text-align: center;">
+                                                                    <a href="https://wa.me/972548059505" style="color: #000000; text-decoration: none; font-weight: bold; display: block; font-size: 16px;">➜ תיאום מפגש חשיפה</a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
 
-        <div class="benefits">
-            <div class="benefit-item">
-                <span style="font-size: 24px">👨‍🏫</span>
-                צוות מקצועי ומנוסה
-            </div>
-            <div class="benefit-item">
-                <span style="font-size: 24px">⭐</span>
-                תוצאות מוכחות בשטח
-            </div>
-            <div class="benefit-item">
-                <span style="font-size: 24px">💫</span>
-                חוויית למידה מהנה
-            </div>
-            <div class="benefit-item">
-                <span style="font-size: 24px">🎯</span>
-                התקדמות מובטחת
-            </div>
-        </div>
+                    <!-- Benefits -->
+                    <tr>
+                        <td class="dark-mode-reset" bgcolor="#ffffff" style="background: #ffffff !important; background-color: #ffffff !important; padding: 20px;">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td bgcolor="#e9d5ff" style="background: #e9d5ff !important; background-color: #e9d5ff !important; padding: 15px; color: #000000; text-align: center; border-radius: 10px; margin-bottom: 10px;">
+                                        <span style="font-size: 20px;">👨‍🏫</span><br>
+                                        <strong>צוות מקצועי ומנוסה</strong>
+                                    </td>
+                                </tr>
+                                <tr><td height="10"></td></tr>
+                                <tr>
+                                    <td bgcolor="#e9d5ff" style="background: #e9d5ff !important; background-color: #e9d5ff !important; padding: 15px; color: #000000; text-align: center; border-radius: 10px; margin-bottom: 10px;">
+                                        <span style="font-size: 20px;">⭐</span><br>
+                                        <strong>תוצאות מוכחות בשטח</strong>
+                                    </td>
+                                </tr>
+                                <tr><td height="10"></td></tr>
+                                <tr>
+                                    <td bgcolor="#e9d5ff" style="background: #e9d5ff !important; background-color: #e9d5ff !important; padding: 15px; color: #000000; text-align: center; border-radius: 10px; margin-bottom: 10px;">
+                                        <span style="font-size: 20px;">💫</span><br>
+                                        <strong>חוויית למידה מהנה</strong>
+                                    </td>
+                                </tr>
+                                <tr><td height="10"></td></tr>
+                                <tr>
+                                    <td bgcolor="#e9d5ff" style="background: #e9d5ff !important; background-color: #e9d5ff !important; padding: 15px; color: #000000; text-align: center; border-radius: 10px;">
+                                        <span style="font-size: 20px;">🎯</span><br>
+                                        <strong>התקדמות מובטחת</strong>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
 
-        <div class="footer">
-            <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/logo.png" alt="פאנל אור" class="logo">
-            <p>הצטרפו למהפכת הלמידה של פאנל אור</p>
-            <p>📱 054-8059505 | ✉️ info@panelor.co.il</p>
-        </div>
+                    <!-- Footer -->
+                    <tr>
+                        <td bgcolor="#2b2b2b" style="padding: 20px; text-align: center;">
+                            <img src="https://raw.githubusercontent.com/Digitaicoil/Panel-or-email/main/images/logo.png" alt="פאנל אור" width="200" style="display: block; margin: 0 auto;">
+                            <p style="color: #ffffff; margin: 10px 0;">הצטרפו למהפכת הלמידה של פאנל אור</p>
+                            <p style="color: #ffffff; margin: 5px 0;">📱 054-8059505 | ✉️ info@panelor.co.il</p>
+                        </td>
+                    </tr>
 
-        <div class="legal-info">
-            <p>
-                <a href="{unsubscribe_link}">להסרה מרשימת התפוצה</a>
-            </p>
-            <p>© 2024 פאנל אור</p>
-        </div>
-    </div>
+                    <!-- Legal -->
+                    <tr>
+                        <td class="dark-mode-reset" bgcolor="#ffffff" style="background: #ffffff !important; background-color: #ffffff !important; padding: 10px; text-align: center; border-top: 1px solid #e5e7eb;">
+                            <p style="margin: 5px 0;">
+                                <a href="{unsubscribe_link}" style="color: #9333ea;">להסרה מרשימת התפוצה</a>
+                            </p>
+                            <p style="margin: 5px 0; color: #000000;">© 2024 פאנל אור</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
-</html> 
+</html>
