@@ -11,15 +11,17 @@
     <meta name="x-apple-disable-message-reformatting">
     <title>פאנל אור - תוכניות חינוכיות</title>
     <style type="text/css">
+        .program-cell {
+            display: table-cell;
+            width: 50%;
+            padding: 0 10px;
+            vertical-align: top;
+        }
         @media screen and (max-width: 600px) {
-            .program-row {
-                display: block !important;
-            }
             .program-cell {
                 display: block !important;
                 width: 100% !important;
                 padding: 0 !important;
-                float: none !important;
             }
             .program-container {
                 margin: 10px 0 !important;
@@ -77,9 +79,9 @@
                     <tr>
                         <td style="padding: 20px;">
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-                                <tr class="program-row">
+                                <tr>
                                     <!-- Program 1 -->
-                                    <td width="50%" style="padding: 0 10px; vertical-align: top; display: inline-block;" class="program-cell">
+                                    <td class="program-cell">
                                         <div style="border: 2px solid #9333ea; border-radius: 15px; padding: 20px; margin-bottom: 20px;" class="program-container">
                                             <div style="text-align: right;">
                                                 <span style="display: inline-block; background-color: #ffd700; color: #000000; font-weight: bold; font-size: 14px; padding: 8px 15px; border-radius: 20px;">להצלחה בכיתה א'</span>
@@ -101,7 +103,7 @@
                                         </div>
                                     </td>
                                     <!-- Program 2 -->
-                                    <td width="50%" style="padding: 0 10px; vertical-align: top; display: inline-block;" class="program-cell">
+                                    <td class="program-cell">
                                         <div style="border: 2px solid #9333ea; border-radius: 15px; padding: 20px; margin-bottom: 20px;" class="program-container">
                                             <div style="text-align: right;">
                                                 <span style="display: inline-block; background-color: #ffd700; color: #000000; font-weight: bold; font-size: 14px; padding: 8px 15px; border-radius: 20px;">מומלץ לכיתה ב'</span>
